@@ -9,7 +9,7 @@
 import {
   getOdds,
   getEvens,
-  getDuplicateCount,
+  countOccurences,
   makeThemDoctors,
 } from "./arrayFunctions";
 
@@ -29,18 +29,18 @@ describe("getEvens(numbers)", () => {
   });
 });
 
-describe("getDuplicateCount(x, numbers)", () => {
+describe("countOccurences(x, numbers)", () => {
   test("returns the number of times `x` occurs in `numbers`.", () => {
     const numbers = [1, 2, 1, 3, 4, 5, 6, 1, 7, 8, 1, 9, 10];
     const x = 1;
     const duplicates = 4;
-    expect(getDuplicateCount(x, numbers)).toEqual(duplicates);
+    expect(countOccurences(x, numbers)).toEqual(duplicates);
   });
 });
 
 describe("makeThemDoctors(students)", () => {
   test("return the same array with all elements appended 'Dr. '", () => {
-    expect(youGottaCalmDown(["x", "y", "z"])).toEqual([
+    expect(makeThemDoctors(["x", "y", "z"])).toEqual([
       "Dr. x",
       "Dr. y",
       "Dr. z",
